@@ -1,0 +1,1030 @@
+<!doctype html>
+<html lang="sr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      VIP Taksi Prevoz Novi Sad – Aerodromski Transferi | Srđan Ašćerić
+    </title>
+    <meta
+      name="description"
+      content="VIP taksi prevoz iz Novog Sada. Luksuzni SUV transferi do aerodroma i gradova širom Evrope. Dostupno 24/7. Rezervacije odmah."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --black: #0a0a0a;
+        --dark: #111111;
+        --card: #1a1a1a;
+        --border: #2a2a2a;
+        --gold: #c9a84c;
+        --gold-lt: #e2c47a;
+        --white: #f5f5f0;
+        --muted: #999;
+        --radius: 6px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--black);
+        color: var(--white);
+        line-height: 1.6;
+      }
+
+      /* ─── NAVBAR ─────────────────────────────────── */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 2.5rem;
+        height: 70px;
+        background: rgba(10, 10, 10, 0.92);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.15rem;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        color: var(--white);
+        text-decoration: none;
+      }
+
+      .nav-logo span {
+        color: var(--gold);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 0.85rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--gold);
+      }
+
+      .nav-cta {
+        background: var(--gold);
+        color: var(--black) !important;
+        padding: 0.55rem 1.2rem;
+        border-radius: var(--radius);
+        font-weight: 600 !important;
+        transition: background 0.2s !important;
+      }
+
+      .nav-cta:hover {
+        background: var(--gold-lt) !important;
+        color: var(--black) !important;
+      }
+
+      /* ─── HERO ───────────────────────────────────── */
+      .hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        background: url("assets/slika2.jpeg") center center / cover no-repeat;
+        filter: brightness(0.35);
+        transform: scale(1.03);
+        transition: transform 8s ease;
+      }
+
+      .hero:hover .hero-bg {
+        transform: scale(1);
+      }
+
+      .hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(10, 10, 10, 0.1) 0%,
+          rgba(10, 10, 10, 0.7) 100%
+        );
+      }
+
+      .hero-content {
+        position: relative;
+        text-align: center;
+        padding: 0 1.5rem;
+        max-width: 800px;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 0.4rem 1.2rem;
+        border-radius: 100px;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero h1 {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(2.4rem, 6vw, 4.2rem);
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 1.2rem;
+      }
+
+      .hero h1 em {
+        font-style: normal;
+        color: var(--gold);
+      }
+
+      .hero-sub {
+        font-size: 1.05rem;
+        color: rgba(245, 245, 240, 0.75);
+        font-weight: 300;
+        max-width: 520px;
+        margin: 0 auto 2.5rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--gold);
+        color: var(--black);
+        font-weight: 700;
+        font-size: 0.95rem;
+        padding: 0.85rem 2rem;
+        border-radius: var(--radius);
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        transition:
+          background 0.2s,
+          transform 0.15s;
+      }
+
+      .btn-primary:hover {
+        background: var(--gold-lt);
+        transform: translateY(-2px);
+      }
+
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        border: 1px solid rgba(245, 245, 240, 0.4);
+        color: var(--white);
+        font-weight: 500;
+        font-size: 0.95rem;
+        padding: 0.85rem 2rem;
+        border-radius: var(--radius);
+        text-decoration: none;
+        transition:
+          border-color 0.2s,
+          transform 0.15s;
+      }
+
+      .btn-outline:hover {
+        border-color: var(--gold);
+        color: var(--gold);
+        transform: translateY(-2px);
+      }
+
+      .hero-stats {
+        position: absolute;
+        bottom: 2.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 3rem;
+      }
+
+      .stat {
+        text-align: center;
+      }
+      .stat-num {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--gold);
+        display: block;
+      }
+      .stat-label {
+        font-size: 0.7rem;
+        color: var(--muted);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      /* ─── SECTIONS ───────────────────────────────── */
+      section {
+        padding: 6rem 2rem;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+
+      .section-tag {
+        display: inline-block;
+        color: var(--gold);
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        margin-bottom: 0.8rem;
+      }
+
+      .section-title {
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      .section-lead {
+        color: var(--muted);
+        font-size: 1rem;
+        font-weight: 300;
+        max-width: 540px;
+      }
+
+      .gold-line {
+        display: block;
+        width: 48px;
+        height: 2px;
+        background: var(--gold);
+        margin: 1.5rem 0;
+      }
+
+      /* ─── SERVICES ───────────────────────────────── */
+      #usluge {
+        background: var(--dark);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.5px;
+        margin-top: 3.5rem;
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .service-card {
+        background: var(--card);
+        padding: 2.5rem 2rem;
+        transition: background 0.25s;
+        border-right: 1.5px solid var(--border);
+      }
+
+      .service-card:last-child {
+        border-right: none;
+      }
+      .service-card:hover {
+        background: #202020;
+      }
+
+      .service-icon {
+        font-size: 2rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .service-card h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.15rem;
+        font-weight: 600;
+        margin-bottom: 0.6rem;
+      }
+
+      .service-card p {
+        color: var(--muted);
+        font-size: 0.88rem;
+        line-height: 1.65;
+      }
+
+      /* ─── FLEET / PHOTO ──────────────────────────── */
+      #vozilo {
+        background: var(--black);
+      }
+
+      .fleet-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin-top: 1rem;
+      }
+
+      .fleet-img-wrap {
+        position: relative;
+        border-radius: var(--radius);
+        overflow: hidden;
+      }
+
+      .fleet-img-wrap img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        display: block;
+        filter: brightness(0.9);
+      }
+
+      .fleet-img-wrap::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        pointer-events: none;
+      }
+
+      .fleet-badge {
+        position: absolute;
+        bottom: 1.2rem;
+        left: 1.2rem;
+        background: rgba(10, 10, 10, 0.88);
+        border: 1px solid var(--gold);
+        color: var(--gold);
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.45rem 1rem;
+        border-radius: 100px;
+        backdrop-filter: blur(8px);
+      }
+
+      .fleet-features {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .feature-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--gold);
+        border-radius: 50%;
+        margin-top: 0.5rem;
+        flex-shrink: 0;
+      }
+
+      .feature-item h4 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.25rem;
+      }
+
+      .feature-item p {
+        color: var(--muted);
+        font-size: 0.84rem;
+      }
+
+      /* ─── DESTINATIONS ───────────────────────────── */
+      #destinacije {
+        background: var(--dark);
+      }
+
+      .dest-intro {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 3.5rem;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+      }
+
+      .dest-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+        gap: 1rem;
+      }
+
+      .dest-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 1.8rem 1.4rem;
+        transition:
+          border-color 0.2s,
+          transform 0.2s;
+      }
+
+      .dest-card:hover {
+        border-color: var(--gold);
+        transform: translateY(-3px);
+      }
+
+      .dest-flag {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .dest-card h3 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+      }
+
+      .dest-card p {
+        font-size: 0.78rem;
+        color: var(--muted);
+      }
+
+      .dest-card .dest-tag {
+        display: inline-block;
+        margin-top: 0.8rem;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--gold);
+      }
+
+      /* ─── WHY US ─────────────────────────────────── */
+      #zasto-mi {
+        background: var(--black);
+      }
+
+      .why-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        margin-top: 3.5rem;
+      }
+
+      .why-card {
+        padding: 2rem;
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        transition: border-color 0.2s;
+      }
+
+      .why-card:hover {
+        border-color: var(--gold);
+      }
+
+      .why-num {
+        font-family: "Playfair Display", serif;
+        font-size: 2.5rem;
+        color: var(--border);
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 1rem;
+      }
+
+      .why-card h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+
+      .why-card p {
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+
+      /* ─── CONTACT ────────────────────────────────── */
+      #kontakt {
+        background: var(--dark);
+        text-align: center;
+      }
+
+      .contact-box {
+        max-width: 640px;
+        margin: 3rem auto 0;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 3.5rem 2.5rem;
+      }
+
+      .phone-link {
+        display: inline-block;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(1.8rem, 5vw, 2.8rem);
+        font-weight: 700;
+        color: var(--gold);
+        text-decoration: none;
+        letter-spacing: 0.04em;
+        margin: 1.5rem 0;
+        transition: color 0.2s;
+      }
+
+      .phone-link:hover {
+        color: var(--gold-lt);
+      }
+
+      .contact-note {
+        font-size: 0.85rem;
+        color: var(--muted);
+        margin-bottom: 2rem;
+      }
+
+      .contact-divider {
+        height: 1px;
+        background: var(--border);
+        margin: 2rem 0;
+      }
+
+      .contact-methods {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .contact-method {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        color: var(--muted);
+      }
+
+      .contact-method span {
+        color: var(--gold);
+      }
+
+      /* ─── FOOTER ─────────────────────────────────── */
+      footer {
+        background: var(--black);
+        border-top: 1px solid var(--border);
+        padding: 2.5rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      .footer-logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--white);
+      }
+
+      .footer-logo span {
+        color: var(--gold);
+      }
+
+      footer p {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .footer-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+      }
+
+      .footer-links a {
+        color: var(--muted);
+        text-decoration: none;
+        font-size: 0.8rem;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: var(--gold);
+      }
+
+      /* ─── RESPONSIVE ─────────────────────────────── */
+      @media (max-width: 768px) {
+        nav {
+          padding: 0 1.2rem;
+        }
+        .nav-links {
+          display: none;
+        }
+
+        .hero-stats {
+          gap: 2rem;
+        }
+
+        .fleet-layout {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+        .fleet-img-wrap img {
+          height: 280px;
+        }
+
+        .why-grid {
+          grid-template-columns: 1fr;
+          gap: 1.2rem;
+        }
+
+        footer {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero-stats {
+          flex-direction: column;
+          gap: 1.2rem;
+          bottom: 1.5rem;
+        }
+        .contact-box {
+          padding: 2rem 1.4rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ── NAVBAR ─────────────────────────────────────── -->
+    <nav>
+      <a href="#" class="nav-logo">VIP<span>Taksi</span> Novi Sad</a>
+      <ul class="nav-links">
+        <li><a href="#usluge">Usluge</a></li>
+        <li><a href="#vozilo">Vozilo</a></li>
+        <li><a href="#destinacije">Destinacije</a></li>
+        <li><a href="#zasto-mi">Zašto mi</a></li>
+        <li><a href="#kontakt" class="nav-cta">Rezervišite</a></li>
+      </ul>
+    </nav>
+
+    <!-- ── HERO ───────────────────────────────────────── -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="hero-badge">Novi Sad · Srbija · Dostupno 24/7</div>
+        <h1>Luksuzni prevoz<br />do <em>svakog odredišta</em></h1>
+        <p class="hero-sub">
+          Aerodromski transferi, poslovni i turistički prevoz komfortnim SUV
+          vozilom. Iz Novog Sada do aerodroma i gradova širom Evrope.
+        </p>
+        <div class="hero-actions">
+          <a href="#kontakt" class="btn-primary"> &#9742; Pozovite odmah </a>
+          <a href="#usluge" class="btn-outline"> Pogledajte usluge ↓ </a>
+        </div>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">24/7</span>
+          <span class="stat-label">Dostupnost</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">SUV</span>
+          <span class="stat-label">Luksuzno vozilo</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">EU</span>
+          <span class="stat-label">Transferi</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── USLUGE ─────────────────────────────────────── -->
+    <section id="usluge">
+      <div class="container">
+        <div class="section-tag">Šta nudimo</div>
+        <h2 class="section-title">Profesionalni prevoz<br />po vašoj meri</h2>
+        <span class="gold-line"></span>
+        <p class="section-lead">
+          Svaka vožnja je prilagođena vašim potrebama – od aerodromskih
+          transfera do multi-dnevnih putovanja po Evropi.
+        </p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">✈️</div>
+            <h3>Aerodromski transferi</h3>
+            <p>
+              Beograd, Budimpešta, Beč, Zagreb, Ljubljana i svi ostali aerodromi
+              u regionu. Tačno i pouzdano.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">💼</div>
+            <h3>Poslovni prevoz</h3>
+            <p>
+              Diskretna i punktualna vožnja za poslovne klijente. Mir i prostor
+              za rad tokom čitavog puta.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">🗺️</div>
+            <h3>Turistički prevoz</h3>
+            <p>
+              Organizovana putovanja do evropskih gradova – individualno ili u
+              grupi, po vašem rasporedu.
+            </p>
+          </div>
+          <div class="service-card">
+            <div class="service-icon">⏱️</div>
+            <h3>Dostupno 24/7</h3>
+            <p>
+              Rani jutarnji ili kasni noćni let? Bez brige. Uvek smo tu, bez
+              doplata za neobično vreme.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── VOZILO ─────────────────────────────────────── -->
+    <section id="vozilo">
+      <div class="container">
+        <div class="fleet-layout">
+          <div class="fleet-img-wrap">
+            <img
+              src="assets/slika1.jpeg"
+              alt="VIP Taksi Prevoz Novi Sad – Luksuzni SUV"
+            />
+            <div class="fleet-badge">Škoda Kodiaq · Lux Edition</div>
+          </div>
+
+          <div>
+            <div class="section-tag">Naše vozilo</div>
+            <h2 class="section-title">
+              Maksimalan komfor<br />na svakom kilometru
+            </h2>
+            <span class="gold-line"></span>
+            <p class="section-lead">
+              Putujete u modernom, klimatizovanom SUV vozilu visokog komfora.
+              Prostrana unutrašnjost, miran voz, punioci za telefone i besplatni
+              Wi‑Fi.
+            </p>
+
+            <div class="fleet-features">
+              <div class="feature-item">
+                <div class="feature-dot"></div>
+                <div>
+                  <h4>Prostrana kabina</h4>
+                  <p>
+                    Dovoljno mesta za putnika i prtljag. Idealno za porodice i
+                    poslovne grupe.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-dot"></div>
+                <div>
+                  <h4>Klimatizacija i tišina</h4>
+                  <p>
+                    Individualno podešavanje temperature, premium zvučna
+                    izolacija.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-dot"></div>
+                <div>
+                  <h4>Profesionalni vozač</h4>
+                  <p>
+                    Iskusan, ljubazan i diskretetan. Govori srpski i engleski.
+                  </p>
+                </div>
+              </div>
+              <div class="feature-item">
+                <div class="feature-dot"></div>
+                <div>
+                  <h4>Uvek čisto i dezinfikovano</h4>
+                  <p>Vozilo se temeljno čisti pre svake vožnje.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DESTINACIJE ────────────────────────────────── -->
+    <section id="destinacije">
+      <div class="container">
+        <div class="dest-intro">
+          <div>
+            <div class="section-tag">Kuda putujemo</div>
+            <h2 class="section-title">Destinacije</h2>
+            <span class="gold-line"></span>
+            <p class="section-lead">
+              Iz Novog Sada do svih važnih aerodroma i gradova u Srbiji i
+              Evropi.
+            </p>
+          </div>
+        </div>
+
+        <div class="dest-grid">
+          <div class="dest-card">
+            <div class="dest-flag">🇷🇸</div>
+            <h3>Beograd</h3>
+            <p>Aerodrom Nikola Tesla i centar grada</p>
+            <span class="dest-tag">~75 km</span>
+          </div>
+          <div class="dest-card">
+            <div class="dest-flag">🇭🇺</div>
+            <h3>Budimpešta</h3>
+            <p>Budapest Ferenc Liszt Airport</p>
+            <span class="dest-tag">~230 km</span>
+          </div>
+          <div class="dest-card">
+            <div class="dest-flag">🇦🇹</div>
+            <h3>Beč</h3>
+            <p>Vienna International Airport</p>
+            <span class="dest-tag">~560 km</span>
+          </div>
+          <div class="dest-card">
+            <div class="dest-flag">🇭🇷</div>
+            <h3>Zagreb</h3>
+            <p>Franjo Tuđman Airport</p>
+            <span class="dest-tag">~360 km</span>
+          </div>
+          <div class="dest-card">
+            <div class="dest-flag">🇸🇮</div>
+            <h3>Ljubljana</h3>
+            <p>Aerodrom Jože Pučnik</p>
+            <span class="dest-tag">~470 km</span>
+          </div>
+          <div class="dest-card">
+            <div class="dest-flag">🇧🇦</div>
+            <h3>Sarajevo</h3>
+            <p>Međunarodni aerodrom Sarajevo</p>
+            <span class="dest-tag">~350 km</span>
+          </div>
+          <div class="dest-card">
+            <div class="dest-flag">🇩🇪</div>
+            <h3>Nemačka</h3>
+            <p>München, Frankfurt i drugi gradovi</p>
+            <span class="dest-tag">Po dogovoru</span>
+          </div>
+          <div class="dest-card">
+            <div class="dest-flag">🌍</div>
+            <h3>Ostale destinacije</h3>
+            <p>Svugde gde trebate stići</p>
+            <span class="dest-tag">Kontaktirajte nas</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── ZAŠTO MI ────────────────────────────────────── -->
+    <section id="zasto-mi">
+      <div class="container">
+        <div class="section-tag">Naše prednosti</div>
+        <h2 class="section-title">Zašto izabrati nas</h2>
+        <span class="gold-line"></span>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <div class="why-num">01</div>
+            <h3>Fiksna cena, bez iznenađenja</h3>
+            <p>
+              Dogovorena cena pre polaska. Bez brojača, bez skrivenih troškova.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-num">02</div>
+            <h3>Tačnost i pouzdanost</h3>
+            <p>Pratimo vaš let. Čekamo i u slučaju kašnjenja, bez doplata.</p>
+          </div>
+          <div class="why-card">
+            <div class="why-num">03</div>
+            <h3>Privatna vožnja</h3>
+            <p>
+              Nema deljenja sa nepoznatima. Vozilo je isključivo vaše tokom
+              celog puta.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-num">04</div>
+            <h3>Iskusan vozač</h3>
+            <p>
+              Višegodišnje iskustvo na međunarodnim relacijama. Poznaje svaki
+              put.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-num">05</div>
+            <h3>Brza rezervacija</h3>
+            <p>
+              Jedan poziv ili poruka i sve je dogovoreno. Bez komplikovanog
+              online bookinga.
+            </p>
+          </div>
+          <div class="why-card">
+            <div class="why-num">06</div>
+            <h3>Noćna i vikend vožnja</h3>
+            <p>
+              Dostupni u svako doba – vikendi, praznici, rani jutarnji letovi.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── KONTAKT ─────────────────────────────────────── -->
+    <section id="kontakt">
+      <div class="container">
+        <div class="section-tag">Kontakt</div>
+        <h2 class="section-title">Rezervišite svoju vožnju</h2>
+        <span class="gold-line" style="margin: 1.5rem auto"></span>
+        <p class="section-lead" style="margin: 0 auto">
+          Pozovite ili pošaljite poruku i dogovorimo detalje. Odgovaramo brzo.
+        </p>
+
+        <div class="contact-box">
+          <p
+            style="
+              font-size: 0.8rem;
+              color: var(--muted);
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+            "
+          >
+            Telefon &amp; Viber &amp; WhatsApp
+          </p>
+          <a href="tel:+381XXXXXXXXX" class="phone-link">+381 06 500 1038</a>
+          <p class="contact-note">Srđan Ašćerić · Novi Sad, Srbija</p>
+
+          <div class="contact-divider"></div>
+
+          <div class="contact-methods">
+            <div class="contact-method"><span>&#9742;</span> Poziv</div>
+            <div class="contact-method"><span>💬</span> Viber</div>
+            <div class="contact-method"><span>📱</span> WhatsApp</div>
+            <div class="contact-method">
+              <span>📷</span> Instagram: @prevoz_putnika_srdjan_asceric
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── FOOTER ─────────────────────────────────────── -->
+    <footer>
+      <div class="footer-logo">VIP<span>Taksi</span> Novi Sad</div>
+      <p>© 2025 Srđan Ašćerić · VIP Taksi Prevoz Novi Sad</p>
+      <ul class="footer-links">
+        <li><a href="#usluge">Usluge</a></li>
+        <li><a href="#destinacije">Destinacije</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </footer>
+  </body>
+</html>
